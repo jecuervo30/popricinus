@@ -1,6 +1,6 @@
 # ============================================================
 # Generation of high-quality analysis regions
-# Software: GenMap vX.X.X; BEDTools vX.X.X; SAMtools vX.X.X; ANGSD vX.X.X
+# Software: GenMap vX.X.X; BEDTools vX.X.X; faidx vX.X.X; ANGSD vX.X.X
 # ============================================================
 
 # Reference genome
@@ -15,7 +15,7 @@ mkdir -p tmp
 export TMPDIR="tmp/"
 
 # ============================================================
-# 1. Calculate genome mappability
+# Genome mappability
 # ============================================================
 
 genmap index \
@@ -33,36 +33,31 @@ genmap map \
     -T 8 \
     -v
 
-# Retain regions with mappability >= 1
 awk '$4 >= 1 {print $1"\t"$2"\t"$3}' \
     Iricinus.assembly.mappability.k150.e2.bedgraph \
     > Iricinus.assembly.mappability.k150.e2.m1.bed
 
 # ============================================================
-# 2. Generate BED file for the complete reference genome
+# Generate BED file for the reference genome
 # ============================================================
 
-samtools faidx "$REFERENCE"
-
-awk '{print $1"\t0\t"$2}' \
-    "${REFERENCE}.fai" \
+faidx --transform bed "$REFERENCE" \
     > Iricinus_assembly.bed
 
-# Count sites in the original reference
-awk -F'\t' 'BEGIN{SUM=0}{SUM+=$3-$2}END{print SUM}' \
-    Iricinus_assembly.bed \
+cat Iricinus_assembly.bed | \
+    awk -F'\t' 'BEGIN{SUM=0}{SUM+=$3-$2}END{print SUM}' \
     > 01_originalRef_sitesNumber.txt
 
 # ============================================================
-# 3. Select autosomes
+# Autosomes
 # ============================================================
 
-awk -F'\t' 'BEGIN{SUM=0}{SUM+=$3-$2}END{print SUM}' \
-    "$AUTOSOMES_BED" \
+cat "$AUTOSOMES_BED" | \
+    awk -F'\t' 'BEGIN{SUM=0}{SUM+=$3-$2}END{print SUM}' \
     > 02_onlyAutosomes_sitesNumber.txt
 
 # ============================================================
-# 4. Exclude repetitive regions
+# Exclude repetitive regions
 # ============================================================
 
 bedtools subtract \
@@ -70,12 +65,12 @@ bedtools subtract \
     -b "$REPEATS_BED" \
     > Iricinus_assembly_noRepeats.bed
 
-awk -F'\t' 'BEGIN{SUM=0}{SUM+=$3-$2}END{print SUM}' \
-    Iricinus_assembly_noRepeats.bed \
+cat Iricinus_assembly_noRepeats.bed | \
+    awk -F'\t' 'BEGIN{SUM=0}{SUM+=$3-$2}END{print SUM}' \
     > 02_originalRef_noRepeats_sitesNumber.txt
 
 # ============================================================
-# 5. Retain regions with good mappability
+# Retain regions with good mappability
 # ============================================================
 
 bedtools intersect \
@@ -83,12 +78,12 @@ bedtools intersect \
     -b Iricinus.assembly.mappability.k150.e2.m1.bed \
     > Iricinus_assembly_noRepeats_goodMappability.bed
 
-awk -F'\t' 'BEGIN{SUM=0}{SUM+=$3-$2}END{print SUM}' \
-    Iricinus_assembly_noRepeats_goodMappability.bed \
+cat Iricinus_assembly_noRepeats_goodMappability.bed | \
+    awk -F'\t' 'BEGIN{SUM=0}{SUM+=$3-$2}END{print SUM}' \
     > 03_originalRef_noRepeats_goodMappability_sitesNumber.txt
 
 # ============================================================
-# 6. Select the 14 main scaffolds
+# Select the 14 main scaffolds
 # ============================================================
 
 for i in {1..14}; do
@@ -97,8 +92,8 @@ for i in {1..14}; do
         >> Iricinus_assembly_noRepeats_goodMappability_mainScaffolds.bed
 done
 
-awk -F'\t' 'BEGIN{SUM=0}{SUM+=$3-$2}END{print SUM}' \
-    Iricinus_assembly_noRepeats_goodMappability_mainScaffolds.bed \
+cat Iricinus_assembly_noRepeats_goodMappability_mainScaffolds.bed | \
+    awk -F'\t' 'BEGIN{SUM=0}{SUM+=$3-$2}END{print SUM}' \
     > 04_originalRef_noRepeats_goodMappability_mainScaffolds_sitesNumber.txt
 
 # Generate ANGSD regions file
@@ -110,7 +105,8 @@ angsd sites index \
     Iricinus_assembly_noRepeats_goodMappability_mainScaffolds.regions
 
 # ============================================================
-# 7. Exclude chromosome 12 and generate autosomal regions
+# Generate autosomal regions
+# Exclude chromosome 12
 # ============================================================
 
 for i in 1 2 3 4 5 6 7 8 9 10 11 13 14; do
@@ -119,8 +115,8 @@ for i in 1 2 3 4 5 6 7 8 9 10 11 13 14; do
         >> Iricinus_assembly_noRepeats_goodMappability_mainScaffolds_autosomes.bed
 done
 
-awk -F'\t' 'BEGIN{SUM=0}{SUM+=$3-$2}END{print SUM}' \
-    Iricinus_assembly_noRepeats_goodMappability_mainScaffolds_autosomes.bed \
+cat Iricinus_assembly_noRepeats_goodMappability_mainScaffolds_autosomes.bed | \
+    awk -F'\t' 'BEGIN{SUM=0}{SUM+=$3-$2}END{print SUM}' \
     > 05_originalRef_noRepeats_goodMappability_mainScaffolds_autosomes_sitesNumber.txt
 
 # Generate ANGSD regions file for autosomes
