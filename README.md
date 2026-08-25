@@ -12,7 +12,7 @@ The analyses include sequence processing, variant filtering, population structur
 
 This section contains scripts and command-line workflows for short (s) and long reads (l):
 
-1. Sequence processing
+#1. Sequence processing
 
 a.    Quality control and read cleaning
 Raw paired-end FASTQ files were quality-filtered and adapter-trimmed using fastp and fastplong.
