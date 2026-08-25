@@ -43,7 +43,7 @@ The scripts used for this step are:
 - **Long reads:** [minimap2 long-read mapping script](1_sequence_processing/1c_read_mapping/l-minimap2_mapping.sh)
 
 
-d.    Selection of high-quality sites
+d.    Alignment filtering and coverage assessment
 
 For short-read data, PCR duplicates were identified using Picard MarkDuplicates. Reads were subsequently filtered using SAMtools to retain properly paired reads with a mapping quality ≥20 while excluding unmapped, secondary, supplementary, duplicate, and other non-primary alignments. The resulting filtered BAM files were indexed, and coverage was calculated across the 14 main scaffolds.
 
