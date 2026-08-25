@@ -13,7 +13,7 @@ This section contains scripts and command-line workflows for short (s) and long 
 # 1. Sequence processing
 
 
-a.    *Quality control and read cleaning*
+**a.**    *Quality control and read cleaning*
 
 Raw paired-end FASTQ files were quality-filtered using fastp and fastplong.
 
@@ -23,7 +23,7 @@ The script used for this step are:
 - **Long reads:** [fastplong quality control and trimming script](1_sequence_processing/1a_quality_control_and_trimming/l-fastplong.sh)
 
 
-b.    *Reference genome preparation*
+**b.**    *Reference genome preparation*
 
 The *I. ricinus* reference genome assembly was used to generate the genomic regions used for downstream analyses. Repetitive regions were identified using the RepeatMasker annotation and low-mappability regions were identified using GenMap. GenMap was run using a k-mer length of 150 bp and an edit distance of 2, and regions with a mappability score ≥1 were retained.
 
@@ -35,7 +35,7 @@ The following scripts were used:
 - **Mappability and final site filtering:** [mappability and site filtering script](1_sequence_processing/1b_reference_preparation/commands_sitesFiltering.sh)
 
 
-c.    *Read mapping*
+**c.**    *Read mapping*
 
 Short- and long-read sequencing data were mapped to the *I. ricinus* reference genome. Short reads were aligned using BWA-MEM v0.7.17, whereas long reads were aligned using minimap2 v2.28. Resulting BAM files were sorted and indexed using SAMtools v1.19.2. Read groups were assigned during or after alignment as appropriate for each sequencing technology.
 
@@ -45,7 +45,7 @@ The scripts used for this step are:
 - **Long reads:** [minimap2 long-read mapping script](1_sequence_processing/1c_read_mapping/l-minimap2_mapping.sh)
 
 
-d.    *Alignment filtering and coverage assessment*
+**d.**    *Alignment filtering and coverage assessment*
 
 Short- and long-read alignments were processed to retain high-quality alignments for downstream analyses. For short reads, PCR duplicates were identified using Picard MarkDuplicates, and alignments were filtered using SAMtools to retain properly paired reads with a mapping quality ≥20. Coverage was subsequently assessed across the 14 main scaffolds.
 
