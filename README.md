@@ -12,6 +12,7 @@ This section contains scripts and command-line workflows for short (s) and long 
 
 # 1. Sequence processing
 
+
 a.    Quality control and read cleaning
 
 Raw paired-end FASTQ files were quality-filtered using fastp and fastplong.
@@ -20,6 +21,7 @@ The script used for this step are:
 
 - **Short reads:** [fastp quality control and trimming script](1_sequence_processing/1a_quality_control_and_trimming/s-fastp.sh)
 - **Long reads:** [fastplong quality control and trimming script](1_sequence_processing/1a_quality_control_and_trimming/l-fastplong.sh)
+
 
 b.    Reference genome preparation
 
@@ -45,13 +47,14 @@ The scripts used for this step are:
 
 d.    Alignment filtering and coverage assessment
 
-For short-read data, PCR duplicates were identified using Picard MarkDuplicates. Reads were subsequently filtered using SAMtools to retain properly paired reads with a mapping quality ≥20 while excluding unmapped, secondary, supplementary, duplicate, and other non-primary alignments. The resulting filtered BAM files were indexed, and coverage was calculated across the 14 main scaffolds.
+Short- and long-read alignments were processed to retain high-quality alignments for downstream analyses. For short reads, PCR duplicates were identified using Picard MarkDuplicates, and alignments were filtered using SAMtools to retain properly paired reads with a mapping quality ≥20. Coverage was subsequently assessed across the 14 main scaffolds.
 
-The script used for this step is:
+For long reads, PCR duplicate marking was not performed, as OxfordNanopore reads are not PCR-amplified. Alignments were filtered using SAMtools to exclude unmapped, secondary, supplementary, and other non-primary alignments, while retaining reads with a mapping quality ≥20. Pre- and post-filtering alignment statistics were generated using SAMtools flagstat.
 
+The scripts used for this step are:
 
-
-
+- **Short reads:** [alignment filtering and coverage assessment script](1_sequence_processing/1d_filtering_assessment/s-high_quality_sites.sh)
+- **Long reads:** [alignment filtering and alignment assessment script](1_sequence_processing/1d_filtering_assessment/l-high_quality_sites.sh)
 
 
 e.    File format conversion
