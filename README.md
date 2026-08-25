@@ -42,6 +42,15 @@ The following scripts were used:
 
 c.    Read mapping
 
+Short- and long-read sequencing data were mapped to the *I. ricinus*
+reference genome. Long reads were aligned using minimap2, followed by
+BAM sorting, read-group assignment, and indexing using SAMtools.
+
+The scripts used for this step are:
+
+- **Long reads:** [minimap2 long-read mapping script](1_sequence_processing/1c_read_mapping/l-minimap2_mapping.sh)
+- **Short reads:** [short-read mapping script](1_sequence_processing/1c_read_mapping/s-XXXX.sh)
+
 
 d.    Selection of high-quality sites
 
