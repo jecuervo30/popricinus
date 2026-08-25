@@ -10,10 +10,6 @@ The analyses include sequence processing, variant filtering, population structur
 
 ## Repository structure
 
-## Data availability
-
-### 01. Sequence processing
-
 This section contains scripts and command-line workflows for:
 
 - Quality control and read cleaning
@@ -45,6 +41,10 @@ This section contains scripts and command-line workflows for:
 └── environment/
     ├── software_versions.txt
     └── R_sessionInfo.txt
+## Data availability
+
+### 01. Sequence processing
+
 
 ## Software and dependencies
 
