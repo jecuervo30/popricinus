@@ -43,13 +43,16 @@ The following scripts were used:
 c.    Read mapping
 
 Short- and long-read sequencing data were mapped to the *I. ricinus*
-reference genome. Long reads were aligned using minimap2, followed by
-BAM sorting, read-group assignment, and indexing using SAMtools.
+reference genome. Short reads were aligned using BWA-MEM v0.7.17,
+whereas long reads were aligned using minimap2 vX.X.X. Resulting BAM
+files were sorted and indexed using SAMtools v1.19.2. Read groups
+were assigned during or after alignment as appropriate for each
+sequencing technology.
 
 The scripts used for this step are:
 
+- **Short reads:** [BWA-MEM short-read mapping script](1_sequence_processing/1c_read_mapping/s-bwa_mapping.sh)
 - **Long reads:** [minimap2 long-read mapping script](1_sequence_processing/1c_read_mapping/l-minimap2_mapping.sh)
-- **Short reads:** [short-read mapping script](1_sequence_processing/1c_read_mapping/s-XXXX.sh)
 
 
 d.    Selection of high-quality sites
