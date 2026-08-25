@@ -13,7 +13,7 @@ This section contains scripts and command-line workflows for short (s) and long 
 # 1. Sequence processing
 
 
-a.    Quality control and read cleaning
+a.    *Quality control and read cleaning*
 
 Raw paired-end FASTQ files were quality-filtered using fastp and fastplong.
 
