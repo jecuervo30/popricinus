@@ -25,7 +25,23 @@ The script used for this step are:
 
 b.    Reference genome preparation
 
-The *I. ricinus* reference genome assembly (reference) was used to generate an autosome BED file, excluding the contig 12 as sexual chromosome. Regions corresponding to repetitive elements, identified using the *I. ricinus* transposable element annotation (I_ricinus.fa.TEs.gff.gz), as well as regions with low mappability, were excluded. 
+The *I. ricinus* reference genome assembly was used to generate the
+genomic regions used for downstream analyses. Repetitive regions were
+identified using the RepeatMasker annotation and low-mappability
+regions were identified using GenMap. GenMap was run using a k-mer
+length of 150 bp and an edit distance of 2, and regions with a
+mappability score ≥1 were retained.
+
+Repetitive and low-mappability regions were excluded from the reference
+genome, and the resulting high-quality regions were restricted to the
+14 main scaffolds. Chromosome 12 was excluded to generate the final
+autosomal dataset. ANGSD-compatible regions files were subsequently
+generated and indexed.
+
+The following scripts were used:
+
+- **Repetitive regions and mappability:** [repetitive region and mappability resource generation script](https://github.com/jecuervo30/popricinus/blob/main/1_sequence_processing/1b_reference_genome_preparation/repeats_resources.sh)
+- **Final site filtering:** [site filtering and final analysis regions script](https://github.com/jecuervo30/popricinus/blob/main/1_sequence_processing/1b_reference_genome_preparation/commands_sitesFiltering.sh)
 
 The following commands were used:
 
