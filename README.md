@@ -40,10 +40,9 @@ generated and indexed.
 
 The following scripts were used:
 
-- **Repetitive regions and mappability:** [resource generation script](1_sequence_processing/1b_reference_preparation/repeats_resources.sh)
-- **Final site filtering:** [site filtering script](1_sequence_processing/1b_reference_preparation/commands_sitesFiltering.sh)
+- **Repetitive regions:** [repetitive region resource generation script](1_sequence_processing/1b_reference_preparation/repeats_resources.sh)
+- **Mappability and final site filtering:** [mappability and site filtering script](1_sequence_processing/1b_reference_preparation/commands_sitesFiltering.sh)
 
-The following commands were used:
 
 c.    Read mapping
 
