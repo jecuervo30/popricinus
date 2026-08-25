@@ -10,7 +10,7 @@ The analyses include sequence processing, variant filtering, population structur
 
 ## Repository structure
 
-1. This section contains scripts and command-line workflows for:
+1. This section contains scripts and command-line workflows for short (s) and long reads (l):
 
 - Quality control and read cleaning
 - Reference genome preparation
