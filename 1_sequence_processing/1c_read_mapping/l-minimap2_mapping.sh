@@ -1,6 +1,6 @@
 # ============================================================
 # Long-read mapping
-# Software: minimap2 vX.X.X; SAMtools v1.19.2
+# Software: minimap2 v2.28; SAMtools v1.19.2
 # ============================================================
 
 set -euo pipefail
