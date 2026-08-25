@@ -19,8 +19,8 @@ Raw paired-end FASTQ files were quality-filtered and adapter-trimmed using fastp
 The script used for this step is:
  
 
-- **Short reads:** [s-fastp.sh](1_sequence_processing/1a_quality_control_and_trimming/s-fastp.sh)
-- **Long reads:** [l-fastplong.sh](1_sequence_processing/1a_quality_control_and_trimming/l-fastplong.sh)
+- **Short reads:** [fastp quality control and trimming script](1_sequence_processing/1a_quality_control_and_trimming/s-fastp.sh)
+- **Long reads:** [fastplong quality control and trimming script](1_sequence_processing/1a_quality_control_and_trimming/l-fastplong.sh)
 
 b.    Reference genome preparation
 
