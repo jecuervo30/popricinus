@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ============================================================
-# Quality control and read cleaning *s* using fastp
+# Quality control and read cleaning using fastp
 # ============================================================
 
 # Load software
