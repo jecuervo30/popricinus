@@ -16,7 +16,8 @@ This section contains scripts and command-line workflows for short (s) and long 
 
 a.    Quality control and read cleaning
 Raw paired-end FASTQ files were quality-filtered and adapter-trimmed using fastp and fastplong.
-The script used for this step is: 
+The script used for this step is:
+
 1_sequence_processing/1_quality_control_and_trimming/s-fastp.sh
 1_sequence_processing/1_quality_control_and_trimming/l-fastplong.sh
 
