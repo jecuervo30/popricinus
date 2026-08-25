@@ -1,4 +1,4 @@
-## popricinus
+# popricinus
 Population genomics of *Ixodes ricinus*, a major Palearctic vector of Lyme disease
 
 ## Overview
@@ -6,10 +6,45 @@ This repository contains the command-line workflows, and
 configuration files used for the genomic and phylogenetic analyses
 presented in **TITLE**.
 
+The analyses include sequence processing, variant filtering, population structure, phylogenetic, demographic, gene flow, and positive selection analyses, together with validation tests to assess potential sources of error and analytical biases.
+
 ## Repository structure
 
 ## Data availability
 
+### 01. Sequence processing
+
+This section contains scripts and command-line workflows for:
+
+- Quality control and read cleaning
+- Reference genome preparation
+- Read mapping
+- Selection of high-quality sites
+- File format conversion
+
+
+│
+├── 02_variant_filtering/
+│
+├── 03_structure_analyses/
+│
+├── 04_phylogenetic_analyses/
+│
+├── 05_demographic_analyses/
+│
+├── 06_gene_flow/
+│
+├── 07_positive_selection/
+│
+├── 08_validation_tests/
+│
+├── 09_figures/
+│
+├── metadata/
+│
+└── environment/
+    ├── software_versions.txt
+    └── R_sessionInfo.txt
 
 ## Software and dependencies
 
