@@ -56,8 +56,15 @@ The scripts used for this step are:
 - **Short reads:** [alignment filtering and coverage assessment script](1_sequence_processing/1d_filtering_assessment/s-high_quality_sites.sh)
 - **Long reads:** [alignment filtering and alignment assessment script](1_sequence_processing/1d_filtering_assessment/l-high_quality_sites.sh)
 
+**NOTE:**
+**Short reads:** Picard MarkDuplicates > duplicate reads identified > samtools view -F 3844 -f 2 -q 20
+**Long reads:** no duplicate marking performed > samtools view -F 2308 -q 20
+
 
 e.    File format conversion
+
+
+
 
 # 2. Variant filtering
 
