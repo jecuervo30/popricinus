@@ -1,11 +1,7 @@
-#!/bin/bash
-
 # ============================================================
-# Quality control and read cleaning using fastp
+# Quality control and read cleaning
+# Software: fastp v0.23.4
 # ============================================================
-
-# Load software
-module load bio/fastp/0.23.4
 
 # Paths
 INPUT_DIR="/HOME/1-RAW/PATH"
@@ -16,11 +12,7 @@ mkdir -p "$OUTPUT_DIR" "$REPORT_DIR"
 
 # Loop over R1 FASTQ files
 for file in "$INPUT_DIR"/*_R1_001.fastq.gz; do
-
-    [ -e "$file" ] || {
-        echo "No input files found in $INPUT_DIR"
-        break
-    }
+    [ -e "$file" ] || { echo "No input files found in $INPUT_DIR"; break; }
 
     sample=$(basename "$file" "_R1_001.fastq.gz")
 
@@ -34,7 +26,5 @@ for file in "$INPUT_DIR"/*_R1_001.fastq.gz; do
         -h "${REPORT_DIR}/${sample}_fastp_report.html" \
         -j "${REPORT_DIR}/${sample}_fastp_report.json"
 
-    echo "+ Generated: ${OUTPUT_DIR}/${sample}_trimmed_R1.fq.gz"
-    echo "+ Generated: ${OUTPUT_DIR}/${sample}_trimmed_R2.fq.gz"
-
+    echo "+ Generated: ${OUTPUT_DIR}/${sample}_trimmed_R1.fq.gz and ${OUTPUT_DIR}/${sample}_trimmed_R2.fq.gz"
 done
