@@ -26,7 +26,11 @@ b.    Reference genome preparation
 
 
 c.    Read mapping
+
+
 d.    Selection of high-quality sites
+
+
 e.    File format conversion
 
 # 2. Variant filtering
