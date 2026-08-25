@@ -25,6 +25,9 @@ The script used for this step are:
 
 b.    Reference genome preparation
 
+The *I. ricinus* reference genome assembly (reference) was used to generate an autosome BED file, excluding the contig 12 as sexual chromosome. Regions corresponding to repetitive elements, identified using the *I. ricinus* transposable element annotation (I_ricinus.fa.TEs.gff.gz), as well as regions with low mappability, were excluded. 
+
+The following commands were used:
 
 c.    Read mapping
 
