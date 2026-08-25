@@ -4,7 +4,7 @@ Population genomics of *Ixodes ricinus*, a major Palearctic vector of Lyme disea
 ## OVERVIEW
 This repository contains the command-line workflows, and
 configuration files used for the genomic and phylogenetic analyses
-presented in **Genomic population of *Ixodes ricinus* reveals the presence of a genetic cline suggestive of climate adaptation**.
+presented in **Genomic population of *Ixodes ricinus* reveals the presence of a genetic cline suggestive of climate adaptation** [Reference].
 
 The analyses include sequence processing, variant filtering, population structure, phylogenetic, demographic, gene flow, and positive selection analyses, together with validation tests to assess potential sources of error and analytical biases.
 
