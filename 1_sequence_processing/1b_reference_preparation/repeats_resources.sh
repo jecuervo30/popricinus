@@ -3,13 +3,16 @@
 # Software: BEDTools vX.X.X; SAMtools vX.X.X
 # ============================================================
 
+# Reference genome
+REFERENCE="/path/to/Iricinus_assembly.fa"
+
 # Convert GFF annotation to BED
 awk 'BEGIN{OFS="\t"} !/^#/ {print $1, $4 - 1, $5}' \
     I_ricinus.fa.TEs.gff > repeats.bed
 
 # Mask repetitive regions in the reference genome
 bedtools maskfasta \
-    -fi /home/sassera/ixodes_ricinus_project/ref_genome/Iricinus_assembly.fa \
+    -fi "$REFERENCE" \
     -bed repeats.bed \
     -fo Iricinus_assembly_masked.fa
 
