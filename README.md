@@ -45,6 +45,14 @@ The scripts used for this step are:
 
 d.    Selection of high-quality sites
 
+For short-read data, PCR duplicates were identified using Picard MarkDuplicates. Reads were subsequently filtered using SAMtools to retain properly paired reads with a mapping quality ≥20 while excluding unmapped, secondary, supplementary, duplicate, and other non-primary alignments. The resulting filtered BAM files were indexed, and coverage was calculated across the 14 main scaffolds.
+
+The script used for this step is:
+
+
+
+
+
 
 e.    File format conversion
 
