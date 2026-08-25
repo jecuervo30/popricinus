@@ -51,41 +51,25 @@ e.    File format conversion
 # 2. Variant filtering
 
 
+# 3. Structure analyses
 
-│
-├── 03_structure_analyses/
-│
-├── 04_phylogenetic_analyses/
-│
-├── 05_demographic_analyses/
-│
-├── 06_gene_flow/
-│
-├── 07_positive_selection/
-│
-├── 08_validation_tests/
-│
-├── 09_figures/
-│
-├── metadata/
-│
-└── environment/
-    ├── software_versions.txt
-    └── R_sessionInfo.txt
+
+
+# 4. Phylogenetic analyses
+
+
+
+# 5. Demographic analyses
+
+
+
+# 6. Gene flow
+
+
+# 7. Positive selection
+
+
 ## Data availability
-
-### 01. Sequence processing
-
-
-## Software and dependencies
-
-## Analysis workflow
-
-### 1. Data preprocessing
-### 2. Phylogenetic analyses
-### 3. Gene family analyses
-### 4. Population/genomic analyses
-### 5. Figure generation
 
 ## Reproducibility
 
