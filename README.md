@@ -1,5 +1,5 @@
 ## popricinus
-Population genomics of Ixodes ricinus, a major Palearctic vector of Lyme disease
+Population genomics of *Ixodes ricinus*, a major Palearctic vector of Lyme disease
 
 ## Overview
 This repository contains the command-line workflows, and
