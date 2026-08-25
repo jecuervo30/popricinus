@@ -47,7 +47,7 @@ The scripts used for this step are:
 
 **d.**    *Alignment filtering and coverage assessment*
 
-Short- and long-read alignments were processed to retain high-quality alignments for downstream analyses. For short reads, PCR duplicates were identified using Picard MarkDuplicates, and alignments were filtered using SAMtools to retain properly paired reads with a mapping quality ≥20. Coverage was subsequently assessed across the 14 main scaffolds.
+Short- and long-read alignments were processed to retain high-quality alignments for downstream analyses. For short reads, PCR duplicates were identified using Picard MarkDuplicates, and alignments were filtered using SAMtools to retain properly paired reads with a mapping quality ≥20. Coverage was subsequently assessed across the 13 main scaffolds.
 
 For long reads, PCR duplicate marking was not performed, as OxfordNanopore reads are not PCR-amplified. Alignments were filtered using SAMtools to exclude unmapped, secondary, supplementary, and other non-primary alignments, while retaining reads with a mapping quality ≥20. Pre- and post-filtering alignment statistics were generated using SAMtools flagstat.
 
