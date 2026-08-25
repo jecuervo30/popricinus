@@ -10,18 +10,20 @@ The analyses include sequence processing, variant filtering, population structur
 
 ## Repository structure
 
-1. This section contains scripts and command-line workflows for short (s) and long reads (l):
+This section contains scripts and command-line workflows for short (s) and long reads (l):
 
-1.1.    Quality control and read cleaning
-Raw paired-end FASTQ files were quality-filtered and adapter-trimmed using fastp v0.23.4.
-The script used for this step is: 1_sequence_processing/1_quality_control_and_trimming/fastp.sh and 
+1.    Quality control and read cleaning
+Raw paired-end FASTQ files were quality-filtered and adapter-trimmed using fastp and fastplong.
+The script used for this step is: 
+1_sequence_processing/1_quality_control_and_trimming/s-fastp.sh
 1_sequence_processing/1_quality_control_and_trimming/l-fastplong.sh
 
-1.2.    Reference genome preparation
+2.    Reference genome preparation
 
-- Read mapping
-- Selection of high-quality sites
-- File format conversion
+
+3.    Read mapping
+4.    Selection of high-quality sites
+5.    File format conversion
 
 
 │
