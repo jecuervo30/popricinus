@@ -15,7 +15,7 @@ This section contains scripts and command-line workflows for short (s) and long 
 
 **a.**    *Quality control and read cleaning*
 
-Raw paired-end FASTQ files were quality-filtered using fastp v1.3.1 ([Chen, 2025](https://doi.org/10.1002/imt2.70078)) and fastplong ().
+Raw paired-end FASTQ files were quality-filtered using fastp v1.3.1 ([Chen, 2025](https://doi.org/10.1002/imt2.70078)) and fastplong ([Chen, 2023](https://doi.org/10.1002/imt2.107)).
 
 The script used for this step are:
 
